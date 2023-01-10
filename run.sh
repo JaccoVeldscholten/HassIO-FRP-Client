@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bashio
 
+WAIT_PIDS=()
 
 declare serverip
 declare serverport
@@ -43,3 +44,8 @@ echo "Starting FRP client..."
 #exec ls /usr/src
 #exec cat /usr/src/frpc.ini
 exec ./usr/src/frpc -c /usr/src/frpc.ini
+
+trap "stop_frpc" SIGTERM SIGHUP
+
+# Wait and hold Add-on running
+wait "${WAIT_PIDS[@]}"
