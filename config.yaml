@@ -1,0 +1,27 @@
+name: "FRP Client for HassIO"
+description: "Vierkante kaas"
+version: "1.0.1"
+slug: "frp_client"
+init: false
+network: host
+ingress: true
+ingress_port: 0
+ingress_stream: true
+startup: services
+panel_icon: mdi:vpn
+init: false
+hassio_api: true
+privileged:
+  - NET_ADMIN
+devices:
+  - /dev/net/tun
+host_network: true
+schema:
+  ip: str
+  port: int
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
