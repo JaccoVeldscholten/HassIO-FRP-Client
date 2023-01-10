@@ -8,7 +8,6 @@ ARG FRP_VERSION
 ENV LANG C.UTF-8
 
 # Copy data for add-on
-COPY frpc.ini /usr/src
 COPY bootstrap.sh /
 COPY run.sh /
 
