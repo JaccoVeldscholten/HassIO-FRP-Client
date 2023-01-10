@@ -46,11 +46,4 @@ function install() {
     ls -la $app_path
 }
 
-function checkIfIniExist(){
-    if [  -f "/usr/src/frpc.ini" ]; then
-        echo "frpc.ini found in /usr/src"
-    fi
-}
-
 install
-checkIfIniExist

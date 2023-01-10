@@ -17,4 +17,4 @@ RUN chmod a+x /run.sh
 
 RUN /bootstrap.sh $BUILD_ARCH $FRP_VERSION
 
-CMD [ "/run.sh"]
+CMD [ "/run.sh" ]
