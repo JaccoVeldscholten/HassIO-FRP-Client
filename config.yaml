@@ -1,7 +1,7 @@
 name: "FRP Client for HassIO"
 description: "Vierkante kaas"
 version: "1.0.1"
-slug: "hello_world"
+slug: "frp_client"
 init: false
 network: host
 ingress: true
@@ -20,9 +20,9 @@ schema:
   serverip: str
   serverport: int
   token: str
-  connections: 
-    - platform: str
-      some_config: bool
+  haport : int
+  encryption: bool
+  compression: bool
 arch:
   - aarch64
   - amd64
