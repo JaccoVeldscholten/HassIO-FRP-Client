@@ -1,5 +1,4 @@
 #!/usr/bin/with-contenv bashio
-
 WAIT_PIDS=()
 
 declare serverip
@@ -32,8 +31,12 @@ if [ ! -f /usr/src/frpc.ini ]; then
     echo "[common]" > /usr/src/frpc.ini
     echo "server_addr = ${SERVER_IP}" >> /usr/src/frpc.ini
     echo "server_port = ${SERVER_PORT}" >> /usr/src/frpc.ini
-    echo "authentication_method = token" >> /usr/src/frpc.ini
-    echo "token = ${AUTH_TOKEN}" >> /usr/src/frpc.ini
+
+    # If token is filled then add token authentication
+    if [ ! -z "${AUTH_TOKEN}" ]; then
+        echo "authentication_method = token" >> /usr/src/frpc.ini
+        echo "token = ${AUTH_TOKEN}" >> /usr/src/frpc.ini
+    fi
 
     echo "Adding HA Exposure......."
     echo "" >> /usr/src/frpc.ini
@@ -52,15 +55,15 @@ if [ ! -f /usr/src/frpc.ini ]; then
     echo "local_port = ${HA_PORT}" >> /usr/src/frpc.ini
     echo "remote_port = ${HA_PORT}" >> /usr/src/frpc.ini
 
-    echo "Creating frpc.ini done \n"
+    echo "Creating frpc.ini done"
 fi
 
 
 # Start FRPC with command: ./frpc -c frpc.ini
 echo "Starting FRP client..."
 
-#exec ls /usr/src
-#exec cat /usr/src/frpc.ini
+cat /usr/src/frpc.ini
+
 exec ./usr/src/frpc -c /usr/src/frpc.ini
 
 trap "stop_frpc" SIGTERM SIGHUP

@@ -1,0 +1,25 @@
+configuration:
+  serverip:
+    name: "Server IP adres"
+    description: "Het IP adres van de FRP server om mee te verbinden"
+    default: "0.0.0.0"
+  serverport:
+    name: "Server Poort"
+    description: "De poort van de FRP server om mee te verbinden"
+    default: 7000
+  token:
+    name: "Token"
+    description: "Het token (Auth) van de FRP server om mee te verbinden"
+    default: ""
+  haport:
+    name: "HomeAssistant Poort"
+    description: "De poort van HomeAssistant om mee te verbinden"
+    default: 8123
+  encryption:
+    name: "Inschakelen encryptie"
+    description: "Inschakelen encryptie die wordt aangeboden door FRP, Zie docs. Aanbevolen: true (aan)"
+    default: false
+  compression:
+    name: "Inschakelen compressie"
+    description: "Inschakelen compressie die wordt aangeboden door FRP, Zie docs."
+    default: false

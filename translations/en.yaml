@@ -1,0 +1,25 @@
+configuration:
+  serverip:
+    name: "Server IP"
+    description: "The IP of the FRP server to connect with"
+    default: "0.0.0.0"
+  serverport:
+    name: "Server Port"
+    description: "The Port of the FRP server to connect with"
+    default: 7000
+  token:
+    name: "Token"
+    description: "The Token (Auth) of the FRP server to connect with"
+    default: ""
+  haport:
+    name: "HomeAssistant Port"
+    description: "The Port of HomeAssistant to connect with"
+    default: 8123
+  encryption:
+    name: "Enable encryption"
+    description: "Enable encryption provided by FRP, See docs. Recommended: true"
+    default: false
+  compression:
+    name: "Enable compression"
+    description: "Enable compression provided by FRP, See docs."
+    default: false
